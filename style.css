@@ -113,11 +113,21 @@ header {
 /* Style for the description textarea */
 textarea {
     width: 100%; /* Full width */
-    height: 150px; /* Increased height */
+    height: 200px; /* Increased height for more writing space */
     margin-top: 10px; /* Move down from label */
     border: 1px solid #ccc;
     border-radius: 4px;
-    padding: 8px; /* Padding for input */
+    padding: 10px; /* Padding for better text input */
+    font-size: 16px; /* Slightly larger font size */
+}
+
+/* Style for ERN/Roll No input */
+input[type="text"] {
+    width: calc(100% - 22px); /* Full width minus padding and border */
+    padding: 10px; /* Padding for better text input */
+    margin-top: 10px; /* Space above input field */
+    border: 1px solid #ccc;
+    border-radius: 4px;
     font-size: 16px; /* Slightly larger font size */
 }
 

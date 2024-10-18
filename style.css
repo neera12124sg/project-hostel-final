@@ -81,6 +81,13 @@ header {
         font-size: 14px;
         padding: 8px;
     }
+
+    input[type="text"],
+    textarea {
+        width: calc(100% - 22px); /* Full width minus padding and border */
+        padding: 10px; /* Padding for better text input */
+        font-size: 16px; /* Ensure larger font size */
+    }
 }
 
 .modal {

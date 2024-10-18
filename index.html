@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIT AOE Hostel Facilities</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to MIT AOE Hostel Facilities</h1>
+    </header>
+
+    <section class="grid-section">
+        <div class="grid-container">
+            <div class="grid-item" onclick="openModal('cleanliness')">1. Cleanliness Request</div>
+            <div class="grid-item" onclick="openModal('roomChange')">2. Room Change Request</div>
+            <div class="grid-item" onclick="openModal('accessories')">3. Request for Extra Accessories</div>
+            <div class="grid-item" onclick="openModal('complaint')">4. Raise a Complaint</div>
+            <div class="grid-item" onclick="openModal('leave')">5. Leave Application</div>
+            <div class="grid-item" onclick="openModal('announcements')">6. Announcements</div>
+            <div class="grid-item" onclick="openModal('rules')">7. Rules and Regulations</div>
+            <div class="grid-item" onclick="openModal('applyHostel')">8. Apply for Hostel</div>
+            <div class="grid-item" onclick="openModal('others')">9. Others</div>
+        </div>
+    </section>
+
+    <!-- Hostel Gallery -->
+    <section id="hostel-gallery">
+        <h2>Hostel Gallery</h2>
+        <div class="gallery">
+            <div class="boys-gallery">
+                <h3>Boys Hostel</h3>
+                <img src="image1.jpg" alt="Hostel 1">
+                <img src="image2.jpg" alt="Hostel 2">
+                <img src="image3.jpg" alt="Hostel 3">
+            </div>
+            <div class="girls-gallery">
+                <h3>Girls Hostel</h3>
+                <img src="image4.jpg" alt="Hostel 4">
+                <img src="image5.jpg" alt="Hostel 5">
+                <img src="image6.jpg" alt="Hostel 6">
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for User Input -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Enter Your Details</h3>
+            <form id="request-form">
+                <label for="ern">Enter ERN Number/Roll No:</label>
+                <input type="text" id="ern" name="ern" required>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+
+                <!-- Room Options -->
+                <div id="room-options" style="display:none;">
+                    <label for="roomType">Select Room Type:</label>
+                    <select id="roomType" name="roomType">
+                        <option value="single">Single Sharing</option>
+                        <option value="double">Double Sharing</option>
+                        <option value="triple">Triple Sharing</option>
+                    </select>
+                </div>
+
+                <!-- Accessories Options -->
+                <div id="accessories-options" style="display:none;">
+                    <label for="accessories">Select Accessories (Max 12):</label>
+                    <select id="accessories" name="accessories" multiple>
+                        <option value="almirah">Almirah</option>
+                        <option value="studyTable">Study Table</option>
+                        <option value="kettle">Kettle</option>
+                        <option value="bedsheet">Bedsheet</option>
+                        <option value="lamp">Lamp</option>
+                        <!-- Add more accessories as needed -->
+                    </select>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Rules and Regulations -->
+    <div id="rules-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Rules and Regulations</h3>
+            <ul>
+                <li>No smoking inside the hostel premises.</li>
+                <li>No loud noise after 10:00 PM.</li>
+                <li>Guests are not allowed to stay overnight.</li>
+                <li>Mess food timings should be strictly followed.</li>
+                <li>Attendance is mandatory for hostel meetings.</li>
+                <li>Do not tamper with hostel property.</li>
+                <li>Internet usage limits are enforced.</li>
+                <li>In case of emergencies, contact the warden.</li>
+                <li>Cleanliness must be maintained in rooms.</li>
+                <li>No unauthorized parties or gatherings.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal for Announcements -->
+    <div id="announcement-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Announcements</h3>
+            <ul>
+                <li><strong>Change in Fee Structure:</strong> New hostel fees will be effective from December 2024. Contact administration for details.</li>
+                <li><strong>Updated Mess Menu:</strong> The mess menu has been updated. Check the new options on the notice board.</li>
+                <li><strong>Room Availability:</strong> Limited single-sharing rooms are available. Contact the warden for more information.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -89,30 +89,6 @@ input[type="password"], select, button {
     border-radius: 8px;
 }
 
-/* Gallery Section */
-#hostel-gallery {
-    padding: 20px;
-    background-color: #ffffff;
-    margin: 20px 0;
-    border-radius: 8px;
-}
-
-.gallery {
-    display: flex;
-    justify-content: space-between;
-}
-
-.boys-gallery, .girls-gallery {
-    width: 45%;
-}
-
-img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-    border-radius: 8px;
-}
-
 /* Footer Styles */
 footer {
     background-color: #004080;
@@ -148,14 +124,6 @@ footer h4 {
 
     .grid-item {
         font-size: 16px;
-    }
-
-    .gallery {
-        flex-direction: column;
-    }
-
-    .boys-gallery, .girls-gallery {
-        width: 100%;
     }
 
     footer {

@@ -8,63 +8,54 @@
 </head>
 <body>
 
-    <header class="header">
-        <h1>MIT AOE Hostel Facilities</h1>
+    <header>
+        <h1>Welcome to MIT AOE Hostel Facilities</h1>
     </header>
 
     <section class="grid-section">
         <div class="grid-container">
-            <!-- First Row -->
             <div class="grid-item" onclick="location.href='request.html?type=cleanliness'">1. Cleanliness Request</div>
             <div class="grid-item" onclick="location.href='request.html?type=roomChange'">2. Room Change Request</div>
             <div class="grid-item" onclick="location.href='request.html?type=accessories'">3. Request for Extra Accessories</div>
-
-            <!-- Second Row -->
             <div class="grid-item" onclick="location.href='request.html?type=complaint'">4. Raise a Complaint</div>
             <div class="grid-item" onclick="location.href='request.html?type=leave'">5. Leave Application</div>
             <div class="grid-item" onclick="location.href='request.html?type=announcements'">6. Announcements</div>
-
-            <!-- Third Row -->
             <div class="grid-item" onclick="location.href='request.html?type=rules'">7. Rules and Regulations</div>
             <div class="grid-item" onclick="location.href='request.html?type=applyHostel'">8. Apply for Hostel</div>
             <div class="grid-item" onclick="location.href='request.html?type=others'">9. Others</div>
         </div>
     </section>
 
-    <!-- Track My Request Section -->
-    <section class="tracking-section">
-        <h3>Track My Request</h3>
-        <button id="trackRequestBtn">Track My Request</button>
-
-        <div id="request-status">
-            <p>Request 1: Completed <span class="status-icon completed">&#x2714;</span></p>
-            <p>Request 2: Completed <span class="status-icon completed">&#x2714;</span></p>
-            <p>Request 3: Pending <span class="status-icon pending">&#x2718;</span></p>
+    <section id="hostel-gallery">
+        <h2>Hostel Gallery</h2>
+        <div class="gallery">
+            <div class="boys-gallery">
+                <h3>Boys Hostel</h3>
+                <img src="images/image1.jpg" alt="Hostel 1">
+                <img src="images/image2.jpg" alt="Hostel 2">
+                <img src="images/image3.jpg" alt="Hostel 3">
+            </div>
+            <div class="girls-gallery">
+                <h3>Girls Hostel</h3>
+                <img src="images/image4.jpg" alt="Hostel 4">
+                <img src="images/image5.jpg" alt="Hostel 5">
+                <img src="images/image6.jpg" alt="Hostel 6">
+            </div>
         </div>
     </section>
 
-    <!-- Admin Section (Hidden) -->
-    <section id="admin-section" style="display: none;">
-        <h3>Admin Panel</h3>
-        <input type="password" id="admin-password" placeholder="Enter admin password">
-        <button id="admin-login-btn">Login</button>
+    <!-- Admin Controls Section -->
+    <div id="admin-controls" style="display: none;">
+        <h4>Update Request Status</h4>
+        <select id="request-select">
+            <option value="1">Request 1</option>
+            <option value="2">Request 2</option>
+            <option value="3">Request 3</option>
+        </select>
+        <br>
+        <button onclick="updateRequestStatus()">Update Status</button>
+    </div>
 
-        <div id="admin-controls" style="display: none;">
-            <h4>Update Request Status</h4>
-            <select id="request-select">
-                <option value="1">Request 1</option>
-                <option value="2">Request 2</option>
-                <option value="3">Request 3</option>
-            </select>
-            <select id="status-select">
-                <option value="completed">Completed</option>
-                <option value="pending">Pending</option>
-            </select>
-            <button id="update-status-btn">Update Status</button>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-address">

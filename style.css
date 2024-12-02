@@ -1,184 +1,86 @@
-/* Reset body font size and basic styles */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    font-size: 18px;
-    line-height: 1.6;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIT AOE Hostel Facilities</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-/* Header styles */
-.header {
-    background-color: #004080;
-    color: white;
-    text-align: center;
-    padding: 30px 0;
-}
+    <header class="header">
+        <h1>MIT AOE Hostel Facilities</h1>
+    </header>
 
-.header h1 {
-    font-size: 36px;
-}
+    <section class="grid-section">
+        <div class="grid-container">
+            <!-- First Row -->
+            <div class="grid-item" onclick="location.href='request.html?type=cleanliness'">1. Cleanliness Request</div>
+            <div class="grid-item" onclick="location.href='request.html?type=roomChange'">2. Room Change Request</div>
+            <div class="grid-item" onclick="location.href='request.html?type=accessories'">3. Request for Extra Accessories</div>
 
-/* Grid Section */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    padding: 20px;
-}
+            <!-- Second Row -->
+            <div class="grid-item" onclick="location.href='request.html?type=complaint'">4. Raise a Complaint</div>
+            <div class="grid-item" onclick="location.href='request.html?type=leave'">5. Leave Application</div>
+            <div class="grid-item" onclick="location.href='request.html?type=announcements'">6. Announcements</div>
 
-.grid-item {
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ccc;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+            <!-- Third Row -->
+            <div class="grid-item" onclick="location.href='request.html?type=rules'">7. Rules and Regulations</div>
+            <div class="grid-item" onclick="location.href='request.html?type=applyHostel'">8. Apply for Hostel</div>
+            <div class="grid-item" onclick="location.href='request.html?type=others'">9. Others</div>
+        </div>
+    </section>
 
-.grid-item:hover {
-    background-color: #004080;
-    color: white;
-}
+    <!-- Track My Request Section -->
+    <section class="tracking-section">
+        <h3>Track My Request</h3>
+        <button id="trackRequestBtn">Track My Request</button>
 
-/* Track My Request Section */
-.tracking-section {
-    padding: 20px;
-    background-color: #ffffff;
-    margin: 20px 0;
-    border-radius: 8px;
-}
+        <div id="request-status">
+            <p>Request 1: Completed <span class="status-icon completed">&#x2714;</span></p>
+            <p>Request 2: Completed <span class="status-icon completed">&#x2714;</span></p>
+            <p>Request 3: Pending <span class="status-icon pending">&#x2718;</span></p>
+        </div>
+    </section>
 
-#request-status p {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
+    <!-- Admin Section (Hidden) -->
+    <section id="admin-section" style="display: none;">
+        <h3>Admin Panel</h3>
+        <input type="password" id="admin-password" placeholder="Enter admin password">
+        <button id="admin-login-btn">Login</button>
 
-.status-icon {
-    font-size: 22px;
-    margin-left: 10px;
-}
+        <div id="admin-controls" style="display: none;">
+            <h4>Update Request Status</h4>
+            <select id="request-select">
+                <option value="1">Request 1</option>
+                <option value="2">Request 2</option>
+                <option value="3">Request 3</option>
+            </select>
+            <select id="status-select">
+                <option value="completed">Completed</option>
+                <option value="pending">Pending</option>
+            </select>
+            <button id="update-status-btn">Update Status</button>
+        </div>
+    </section>
 
-.completed {
-    color: green;
-}
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-address">
+                <h4>Address:</h4>
+                <p>MIT Academy of Engineering, Alandi Road,<br>
+                Pune - 412 105, Maharashtra (India).</p>
+                <p>Mobile: +91-906844436, +91-87933334300.</p>
+            </div>
+            <div class="footer-contacts">
+                <h4>Contacts:</h4>
+                <p>Phone: 020 - 38432870.</p>
+                <p>Email: mitaoehostel.le.lo</p>
+            </div>
+        </div>
+    </footer>
 
-.pending {
-    color: red;
-}
-
-/* Admin Section */
-#admin-section {
-    padding: 20px;
-    background-color: #fff;
-    margin: 20px 0;
-    border-radius: 8px;
-}
-
-input[type="password"], select, button {
-    width: 100%;
-    padding: 15px;
-    font-size: 18px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #004080;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    margin-top: 40px;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-}
-
-.footer-address, .footer-contacts {
-    width: 45%;
-}
-
-footer h4 {
-    margin-bottom: 10px;
-}
-
-/* Request Form Section */
-.form-section {
-    margin: 20px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h3 {
-    margin-bottom: 10px;
-}
-
-/* Style for the description textarea */
-textarea#description {
-    width: 100%;  /* Full width */
-    height: 200px; /* Increased height for more space */
-    padding: 10px; /* Padding for better readability */
-    font-size: 16px; /* Larger font size */
-    border: 1px solid #ccc; /* Border around the textarea */
-    border-radius: 5px; /* Rounded corners for the textarea */
-    box-sizing: border-box; /* Ensure padding is included in width/height */
-}
-
-/* Room, Accessories Options */
-#room-options, #accessories-options, #rules-section, #announcements-section {
-    margin-top: 20px;
-}
-
-label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-/* Submit Button */
-button[type="submit"] {
-    background-color: #004080; /* MIT AOE Blue */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: #003366; /* Darker blue for hover effect */
-}
-
-/* Optional: Adjust for mobile */
-@media (max-width: 768px) {
-    .header h1 {
-        font-size: 28px;
-    }
-
-    .grid-container {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .grid-item {
-        font-size: 16px;
-    }
-
-    footer {
-        padding: 10px;
-    }
-
-    /* Adjust for the description textarea on smaller screens */
-    textarea#
+    <script src="script.js"></script>
+</body>
+</html>

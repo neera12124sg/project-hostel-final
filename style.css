@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -28,13 +29,12 @@ header {
     border: 1px solid #ccc;
     text-align: center;
     cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    height: 100px;
+    transition: background-color 0.3s ease;
+    height: 100px; /* Default height for PC view */
 }
 
 .grid-item:hover {
     background-color: #f2f2f2;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .gallery {
@@ -61,33 +61,37 @@ header {
 /* Media Query for PC View */
 @media (min-width: 768px) {
     .gallery img {
-        max-width: 250px;
-        max-height: 250px;
+        max-width: 250px; /* Increased for PC view */
+        max-height: 250px; /* Increased for PC view */
     }
     
     .grid-container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* Align boxes in three columns */
     }
 
     .grid-item {
-        height: 100px;
+        height: 100px; /* Ensure consistent height for all items in PC view */
     }
 }
 
 /* Media Query for Mobile View */
 @media (max-width: 767px) {
     .grid-item {
-        height: 60px;
-        font-size: 14px;
-        padding: 8px;
+        height: 60px; /* Smaller height for mobile view */
+        font-size: 14px; /* Adjust font size for better fit */
+        padding: 8px; /* Slightly less padding */
     }
+}
 
-    input[type="text"],
-    textarea {
-        width: calc(100% - 22px); /* Full width minus padding and border */
-        padding: 10px; /* Padding for better text input */
-        font-size: 16px; /* Ensure larger font size */
-    }
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 100px; /* Adjust height for description */
 }
 
 .modal {
@@ -117,29 +121,18 @@ header {
     cursor: pointer;
 }
 
-/* Style for the description textarea */
-textarea {
-    width: 100%; /* Full width */
-    height: 200px; /* Increased height for more writing space */
-    margin-top: 10px; /* Move down from label */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px; /* Padding for better text input */
-    font-size: 16px; /* Slightly larger font size */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #004080;
+    color: white;
 }
 
-/* Style for ERN/Roll No input */
-input[type="text"] {
-    width: calc(100% - 22px); /* Full width minus padding and border */
-    padding: 10px; /* Padding for better text input */
-    margin-top: 10px; /* Space above input field */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px; /* Slightly larger font size */
+.footer-address, .footer-contacts {
+    width: 45%; /* Adjust width as needed */
 }
 
-/* Optional: Add spacing for labels */
-label {
-    margin-top: 10px; /* Space above labels */
-    display: block; /* Make labels block elements */
+.footer-address h4, .footer-contacts h4 {
+    margin: 0 0 10px 0; /* Margin for heading */
 }

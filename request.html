@@ -15,10 +15,15 @@
     <section class="form-section">
         <h3>Enter Your Details</h3>
         <form id="request-form">
-            <label for="ern">Enter ERN Number/Roll No:</label>
-            <input type="text" id="ern" name="ern" required>
-            <label for="description">Description:</label>
-            <textarea id="description" name="description" required></textarea>
+            <div class="form-group">
+                <label for="ern">Enter ERN Number/Roll No:</label>
+                <input type="text" id="ern" name="ern" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+            </div>
 
             <!-- Room Options -->
             <div id="room-options" style="display:none;">

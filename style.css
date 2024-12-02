@@ -112,7 +112,57 @@ footer h4 {
     margin-bottom: 10px;
 }
 
-/* Media Queries for smaller screens */
+/* Request Form Section */
+.form-section {
+    margin: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+/* Style for the description textarea */
+textarea#description {
+    width: 100%;  /* Full width */
+    height: 200px; /* Increased height for more space */
+    padding: 10px; /* Padding for better readability */
+    font-size: 16px; /* Larger font size */
+    border: 1px solid #ccc; /* Border around the textarea */
+    border-radius: 5px; /* Rounded corners for the textarea */
+    box-sizing: border-box; /* Ensure padding is included in width/height */
+}
+
+/* Room, Accessories Options */
+#room-options, #accessories-options, #rules-section, #announcements-section {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    background-color: #004080; /* MIT AOE Blue */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #003366; /* Darker blue for hover effect */
+}
+
+/* Optional: Adjust for mobile */
 @media (max-width: 768px) {
     .header h1 {
         font-size: 28px;
@@ -129,4 +179,6 @@ footer h4 {
     footer {
         padding: 10px;
     }
-}
+
+    /* Adjust for the description textarea on smaller screens */
+    textarea#

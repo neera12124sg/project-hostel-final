@@ -1,4 +1,4 @@
-
+// Open modal based on request type (room change, accessories, rules, etc.)
 function openModal(type) {
     const modal = document.getElementById('modal');
     const form = document.getElementById('request-form');
@@ -33,6 +33,7 @@ function openModal(type) {
     }
 }
 
+// Close modal
 function closeModal() {
     const modals = document.querySelectorAll('.modal');
     modals.forEach(modal => {
@@ -48,4 +49,43 @@ window.onclick = function(event) {
             modal.style.display = 'none';
         }
     });
-}
+};
+
+// Track My Request functionality
+document.getElementById("trackRequestBtn").addEventListener("click", function() {
+    const statusDiv = document.getElementById("request-status");
+    statusDiv.style.display = statusDiv.style.display === "none" ? "block" : "none"; // Toggle the visibility of request status
+});
+
+// Admin Login functionality
+document.getElementById("admin-login-btn").addEventListener("click", function() {
+    const password = document.getElementById("admin-password").value;
+    const correctPassword = "admin123"; // You can set your own password here
+    
+    if(password === correctPassword) {
+        // Show the admin control section
+        document.getElementById("admin-controls").style.display = "block";
+    } else {
+        alert("Incorrect password!");
+    }
+});
+
+// Update Request Status functionality
+document.getElementById("update-status-btn").addEventListener("click", function() {
+    const selectedRequest = document.getElementById("request-select").value;
+    const selectedStatus = document.getElementById("status-select").value;
+
+    // Update the status on the page (you could also implement saving this in a backend or local storage)
+    let statusText = "Pending";
+    let statusIcon = "&#x2718;"; // Cross (pending icon)
+    if (selectedStatus === "completed") {
+        statusText = "Completed";
+        statusIcon = "&#x2714;"; // Checkmark (completed icon)
+    }
+
+    // Update the status of the request
+    const requestElement = document.querySelector(`#request-status p:nth-child(${selectedRequest})`);
+    if(requestElement) {
+        requestElement.innerHTML = `Request ${selectedRequest}: ${statusText} <span class="status-icon ${selectedStatus}">${statusIcon}</span>`;
+    }
+});

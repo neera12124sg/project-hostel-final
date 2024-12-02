@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -12,6 +13,7 @@ header {
     color: white;
 }
 
+/* Grid Layout */
 .grid-section {
     margin: 20px;
 }
@@ -36,6 +38,7 @@ header {
     background-color: #f2f2f2;
 }
 
+/* Gallery Styles */
 .gallery {
     display: flex;
     justify-content: space-around;
@@ -57,42 +60,34 @@ header {
     margin: 10px;
 }
 
-/* Media Query for PC View */
-@media (min-width: 768px) {
-    .gallery img {
-        max-width: 250px; /* Increased for PC view */
-        max-height: 250px; /* Increased for PC view */
-    }
-    
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr); /* Align boxes in three columns */
-    }
-
-    .grid-item {
-        height: 100px; /* Ensure consistent height for all items in PC view */
-    }
+/* Track My Request Section */
+#request-status {
+    display: none; /* Hidden by default */
+    margin-top: 20px;
 }
 
-/* Media Query for Mobile View */
-@media (max-width: 767px) {
-    .grid-item {
-        height: 60px; /* Smaller height for mobile view */
-        font-size: 14px; /* Adjust font size for better fit */
-        padding: 8px; /* Slightly less padding */
-    }
+.status-icon {
+    font-size: 20px;
+    margin-left: 10px;
 }
 
-input[type="text"], textarea {
-    width: 100%;
+/* Admin Section */
+#admin-controls {
+    display: none; /* Hidden by default */
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+input[type="password"] {
     padding: 10px;
     margin: 10px 0;
-    box-sizing: border-box;
+    width: 100%;
 }
 
-textarea {
-    height: 100px; /* Adjust height for description */
-}
-
+/* Modal Styles */
 .modal {
     display: none;
     position: fixed;
@@ -120,6 +115,7 @@ textarea {
     cursor: pointer;
 }
 
+/* Footer Styles */
 .footer-container {
     display: flex;
     justify-content: space-between;
@@ -139,4 +135,39 @@ textarea {
 .footer-address p, .footer-contacts p {
     margin: 0;
     font-size: 14px; /* Adjust the font size */
+}
+
+/* Media Query for PC View */
+@media (min-width: 768px) {
+    .gallery img {
+        max-width: 250px; /* Increased for PC view */
+        max-height: 250px; /* Increased for PC view */
+    }
+    
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* Align boxes in three columns */
+    }
+
+    .grid-item {
+        height: 100px; /* Ensure consistent height for all items in PC view */
+    }
+
+    /* Admin Section */
+    #admin-controls {
+        display: block;
+    }
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 767px) {
+    .grid-item {
+        height: 60px; /* Smaller height for mobile view */
+        font-size: 14px; /* Adjust font size for better fit */
+        padding: 8px; /* Slightly less padding */
+    }
+
+    /* Admin Section */
+    #admin-controls {
+        display: none;
+    }
 }

@@ -1,45 +1,66 @@
-/* Reset body font size to maintain consistency */
+/* Reset body font size and basic styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
-    font-size: 16px;  /* Ensure standard font size */
+    background-color: #f9f9f9;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
-/* General styling for the grid items (request buttons) */
+/* Header styles */
+header {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+/* Grid Section */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
 .grid-item {
     background-color: #fff;
-    padding: 20px;  /* Increased padding for better button size */
+    padding: 20px;
     border: 1px solid #ccc;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    height: 120px;  /* Adjusting height for better appearance */
-    font-size: 18px;  /* Standardizing font size for request buttons */
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Reset styles for the request form (input and textarea) */
-input[type="text"], textarea {
-    width: 100%;
-    padding: 15px;  /* Increased padding for better usability */
-    margin: 10px 0;
-    box-sizing: border-box;
-    font-size: 16px;  /* Ensures consistent text size */
+.grid-item:hover {
+    background-color: #004080;
+    color: white;
 }
 
-/* Adjust textarea height */
-textarea {
-    height: 120px; /* Adjust height for better input visibility */
+/* Track My Request Section */
+.tracking-section {
+    padding: 20px;
+    background-color: #ffffff;
+    margin: 20px 0;
+    border-radius: 8px;
 }
 
-/* Status section font size and icons */
 #request-status p {
-    font-size: 16px;  /* Standardize font size */
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .status-icon {
-    font-size: 20px;  /* Ensure clear visibility for tick and cross icons */
+    font-size: 22px;
     margin-left: 10px;
 }
 
@@ -51,23 +72,93 @@ textarea {
     color: red;
 }
 
-/* Admin section */
-#admin-section input, #admin-section button {
-    font-size: 16px;  /* Standardize admin section font */
+/* Admin Section */
+#admin-section {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 8px;
 }
 
-/* Footer styles */
+input[type="password"], select, button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* Gallery Section */
+#hostel-gallery {
+    padding: 20px;
+    background-color: #ffffff;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+}
+
+.boys-gallery, .girls-gallery {
+    width: 45%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #004080;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
 .footer-container {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-    background-color: #004080;
-    color: white;
-    font-size: 16px; /* Consistent font size */
+    padding: 0 20px;
 }
 
-/* Additional reset for specific sections */
-input, textarea {
-    border: 1px solid #ccc;
-    border-radius: 8px;
+.footer-address, .footer-contacts {
+    width: 45%;
+}
+
+footer h4 {
+    margin-bottom: 10px;
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .grid-item {
+        font-size: 18px;
+    }
+
+    .gallery {
+        flex-direction: column;
+    }
+
+    .boys-gallery, .girls-gallery {
+        width: 100%;
+    }
+
+    footer {
+        padding: 10px;
+    }
 }

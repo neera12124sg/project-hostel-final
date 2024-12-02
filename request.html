@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Request Form</h1>
+    </header>
+
+    <section class="form-section">
+        <h3>Enter Your Details</h3>
+        <form id="request-form">
+            <label for="ern">Enter ERN Number/Roll No:</label>
+            <input type="text" id="ern" name="ern" required>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <!-- Room Options -->
+            <div id="room-options" style="display:none;">
+                <label for="roomType">Select Room Type:</label>
+                <select id="roomType" name="roomType">
+                    <option value="single">Single Sharing</option>
+                    <option value="double">Double Sharing</option>
+                    <option value="triple">Triple Sharing</option>
+                </select>
+            </div>
+
+            <!-- Accessories Options -->
+            <div id="accessories-options" style="display:none;">
+                <label for="accessories">Select Accessories (Max 12):</label>
+                <select id="accessories" name="accessories" multiple>
+                    <option value="almirah">Almirah</option>
+                    <option value="studyTable">Study Table</option>
+                    <option value="kettle">Kettle</option>
+                    <option value="bedsheet">Bedsheet</option>
+                    <option value="lamp">Lamp</option>
+                </select>
+            </div>
+
+            <!-- Rules Section -->
+            <div id="rules-section" style="display:none;">
+                <h3>Hostel Rules and Regulations</h3>
+                <ul>
+                    <li>No smoking inside the hostel premises.</li>
+                    <li>No loud noise after 10:00 PM.</li>
+                    <li>Guests are not allowed to stay overnight.</li>
+                    <li>Mess food timings should be strictly followed.</li>
+                    <li>Attendance is mandatory for hostel meetings.</li>
+                    <li>Do not tamper with hostel property.</li>
+                    <li>Internet usage limits are enforced.</li>
+                    <li>In case of emergencies, contact the warden.</li>
+                    <li>Cleanliness must be maintained in rooms.</li>
+                    <li>No unauthorized parties or gatherings.</li>
+                </ul>
+            </div>
+
+            <!-- Announcements Section -->
+            <div id="announcements-section" style="display:none;">
+                <h3>Recent Announcements</h3>
+                <ul>
+                    <li><strong>Change in Fee Structure:</strong> The hostel fee structure has been revised. Please check the notice board for detailed information.</li>
+                    <li><strong>Updated Mess Menu:</strong> The mess menu has been updated to include more variety. A new menu will be effective from next week.</li>
+                    <li><strong>Room Availability:</strong> There are limited rooms available for the next semester. Interested students should apply soon.</li>
+                </ul>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const requestType = urlParams.get('type');
+
+            const roomOptions = document.getElementById('room-options');
+            const accessoriesOptions = document.getElementById('accessories-options');
+            const rulesSection = document.getElementById('rules-section');
+            const announcementsSection = document.getElementById('announcements-section');
+
+            // Show or hide elements based on request type
+            if (requestType === 'roomChange') {
+                roomOptions.style.display = 'block';
+            } else if (requestType === 'accessories') {
+                accessoriesOptions.style.display = 'block';
+            } else if (requestType === 'rules') {
+                rulesSection.style.display = 'block';
+                document.getElementById('ern').style.display = 'none'; // Hide ERN field
+                document.getElementById('description').style.display = 'none'; // Hide description field
+            } else if (requestType === 'announcements') {
+                announcementsSection.style.display = 'block';
+                document.getElementById('ern').style.display = 'none'; // Hide ERN field
+                document.getElementById('description').style.display = 'none'; // Hide description field
+            }
+        });
+    </script>
+</body>
+</html>
